@@ -131,48 +131,4 @@ function Products({}) {
 
 export default Products;
 
-/*import React from "react";
-import { useGlobalContext } from "../Context";
-function Products() {
-  const { products } = useGlobalContext();
 
-  return (
-    <div className="100vh bg-blue-500 flex flex-wrap gap-10 ">
-      {products.map((productsInfo) => {
-        const { id, title, category, image, description } = productsInfo;
-        console.log(products);
-        return (
-          <div key={id} className="m-3">
-            <img src={image} alt={title} className="w-80 h-80" />
-            <h2 className="w-80">{title} </h2>
-          </div>
-        );
-      })}
-    </div>
-  );
-}
-
-export default Products;
-/*import React from "react";
-import { useEffect, useState } from "react";
-function Products() {
-  const [product, setProduct] = useState();
-  useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((response) => response.json())
-      .then((data) => console.log(data));
-  }, []);
-  return <div>kj</div>;
-}
-style
-export default Products; <div
-            className="text-muted"
-            style={{
-              width: "1px",
-              height: "500px",
-              border: "1px solid black",
-              marginRight: "px",
-              marginLeft: "5px",
-              marginTop: "-20px",
-            }}
-          ></div>*/
