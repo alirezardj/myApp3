@@ -28,7 +28,11 @@ function EachProduct() {
     <div key={id}>
       <Card className="eachproduct-card m-4">
         <div className="d-flex">
-          <Card.Img className="eachproducts-card-image" src={image} />
+          <Card.Img
+            className="eachproducts-card-image"
+            alt={image}
+            src={image}
+          />
           <p className="eachproduct-discription">{description}</p>
         </div>
         <Card.Body className="eachproduct-card-body">

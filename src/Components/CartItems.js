@@ -12,7 +12,11 @@ function CartItems({ id, quantity }) {
     <div>
       <Stack direction="horizontal" gap={3}>
         <div key={id}>
-          <img className="shoppingcart-image" src={item.image} />
+          <img
+            className="shoppingcart-image"
+            alt={item.image}
+            src={item.image}
+          />
 
           <div className=" me-auto">
             <p>{item.title} </p>
