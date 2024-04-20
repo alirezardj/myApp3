@@ -1,17 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { useGlobalContext } from "../Context";
 import { Link } from "react-router-dom";
-import { Card, Button, Container, Col, Row } from "react-bootstrap";
-import "../App.css";
+import { Card, Container, Col, Row } from "react-bootstrap";
+
 function Products({}) {
-  const {
-    products,
-    selectItem,
-    selectedItem,
-    groupedProducts,
-    selectedCategory,
-    setSelectedCategory,
-  } = useGlobalContext();
+  const { products, selectItem, groupedProducts, selectedCategory } =
+    useGlobalContext();
 
   // Render each category
   return (
@@ -30,43 +24,22 @@ function Products({}) {
               {groupedProducts[selectedCategory].map((product) => (
                 <Col>
                   <Card
+                    className="products-card"
                     key={product.id}
-                    className=""
                     onClick={() => selectItem(product.id)}
-                    style={{
-                      width: "250px",
-                      height: "460px",
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
-                      marginLeft: "px",
-                    }}
                   >
                     <Card.Img
-                      className="mt-2"
-                      style={{
-                        width: "200px",
-                        height: "260px",
-                      }}
+                      className="products-card-image mt-2"
                       src={product.image}
                       alt={product.title}
                     />
 
-                    <Card.Title
-                      className=" d-flex flex-column justify-content-between mt-1  p-2 "
-                      style={{
-                        width: "250px",
-                        height: "200px",
-                        backgroundColor: "",
-                      }}
-                    >
+                    <Card.Title className="products-card-title d-flex flex-column justify-content-between mt-1  p-2 ">
                       <snap className="text-start ">{product.title}</snap>
                       <snap className="text-muted align-self-end ">
                         {product.price}$
                       </snap>
                     </Card.Title>
-
-                    {/* Render other product information here */}
                   </Card>
                 </Col>
               ))}
@@ -82,42 +55,21 @@ function Products({}) {
                 <Col>
                   <Card
                     key={product.id}
-                    className=""
+                    className="products-card"
                     onClick={() => selectItem(product.id)}
-                    style={{
-                      width: "250px",
-                      height: "460px",
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
-                      marginLeft: "px",
-                    }}
                   >
                     <Card.Img
-                      className="mt-2"
-                      style={{
-                        width: "200px",
-                        height: "260px",
-                      }}
+                      className="products-card-image mt-2"
                       src={product.image}
                       alt={product.title}
-                      variant="top"
                     />
 
-                    <Card.Title
-                      className=" d-flex flex-column justify-content-between mt-3 p-2 "
-                      style={{
-                        width: "250px",
-                        height: "150px",
-                      }}
-                    >
+                    <Card.Title className="products-card-title d-flex flex-column justify-content-between mt-3 p-2 ">
                       <snap className="text-start ">{product.title}</snap>
                       <snap className="text-muted align-self-end ">
                         {product.price}$
                       </snap>
                     </Card.Title>
-
-                    {/* Render other product information here */}
                   </Card>
                 </Col>
               ))}
@@ -130,49 +82,3 @@ function Products({}) {
 }
 
 export default Products;
-
-/*import React from "react";
-import { useGlobalContext } from "../Context";
-function Products() {
-  const { products } = useGlobalContext();
-
-  return (
-    <div className="100vh bg-blue-500 flex flex-wrap gap-10 ">
-      {products.map((productsInfo) => {
-        const { id, title, category, image, description } = productsInfo;
-        console.log(products);
-        return (
-          <div key={id} className="m-3">
-            <img src={image} alt={title} className="w-80 h-80" />
-            <h2 className="w-80">{title} </h2>
-          </div>
-        );
-      })}
-    </div>
-  );
-}
-
-export default Products;
-/*import React from "react";
-import { useEffect, useState } from "react";
-function Products() {
-  const [product, setProduct] = useState();
-  useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((response) => response.json())
-      .then((data) => console.log(data));
-  }, []);
-  return <div>kj</div>;
-}
-style
-export default Products; <div
-            className="text-muted"
-            style={{
-              width: "1px",
-              height: "500px",
-              border: "1px solid black",
-              marginRight: "px",
-              marginLeft: "5px",
-              marginTop: "-20px",
-            }}
-          ></div>*/

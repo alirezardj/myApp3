@@ -1,35 +1,5 @@
-/*import React from "react";
-import { useContext, useState, useEffect } from "react";
-import axios from "axios";
-const AppContext = React.createContext();
-const allProductsUrl = "https://fakestoreapi.com/products";
-const AppProvider = ({ children }) => {
-  const [theProducts, setTheProducts] = useState([]);
-  const fetchProducts = async (url) => {
-    try {
-      const { data } = await axios(url);
-      setTheProducts(data);
-    } catch (error) {
-      console.log(error.response);
-    }
-  };
-  useEffect(() => {
-    fetchProducts(allProductsUrl);
-  }, []);
-  return (
-    <AppContext.Provider value={{ theProducts }}>
-      {children}
-    </AppContext.Provider>
-  );
-};
-const useGlobalContext = () => {
-  return useContext(AppContext);
-};
-export { useGlobalContext };
-export { AppContext, AppProvider };*/
 import React, { useContext, useState, useEffect } from "react";
 import axios from "axios";
-import ShoppingPage from "./Components/CartItems";
 import ShoppingCart from "./Components/ShoppingCart";
 
 const AppContext = React.createContext();
@@ -38,8 +8,8 @@ const allProductsUrl = "https://fakestoreapi.com/products";
 const AppProvider = (props) => {
   const [products, setProducts] = useState([]);
   const [selectedItem, setSelectedItem] = useState(null);
-  const [selectedItemQuantity, setSelectedItemQuantity] = useState(0);
-  const [items, setItems] = useState();
+  const [selectedItemQuantity] = useState(0);
+
   const [cartItems, setCartItems] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
   const cartQuantity = cartItems.reduce(

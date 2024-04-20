@@ -3,8 +3,7 @@ import { useGlobalContext } from "../Context";
 import { FormatCurrency } from "../utilitiese/Utilitise";
 
 function CartItems({ id, quantity }) {
-  const { removeFromCart, cartItems, products, selectedItem } =
-    useGlobalContext();
+  const { removeFromCart, products } = useGlobalContext();
 
   const item = products.find((i) => i.id === id);
   if (!item) return null;
@@ -13,18 +12,19 @@ function CartItems({ id, quantity }) {
     <div>
       <Stack direction="horizontal" gap={3}>
         <div key={id}>
-          <img src={item.image} style={{ width: "60px", height: "75px" }} />
+          <img className="shoppingcart-image" src={item.image} />
 
-          <div className="me-auto">
-            {item.title}{" "}
+          <div className=" me-auto">
+            <p>{item.title} </p>
+            <span style={{ fontSize: ".75rem" }}>
+              {FormatCurrency(item.price)}
+              {"   "}
+            </span>
             {quantity > 1 && (
-              <span className="text-muted" style={{ fontSize: ".5 rem" }}>
+              <span className="text-muted" style={{ fontSize: ".75rem" }}>
                 x{quantity}
               </span>
             )}
-          </div>
-          <div className="me-auto" style={{ fontSize: ".75rem" }}>
-            {FormatCurrency(item.price)}
           </div>
         </div>
         <div className="me-auto">{FormatCurrency(item.price * quantity)}</div>
