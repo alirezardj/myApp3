@@ -3,7 +3,7 @@ import { useGlobalContext } from "../Context";
 import { Link } from "react-router-dom";
 import { Card, Container, Col, Row } from "react-bootstrap";
 
-function Products({}) {
+function Products() {
   const { products, selectItem, groupedProducts, selectedCategory } =
     useGlobalContext();
 
