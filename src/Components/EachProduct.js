@@ -33,16 +33,15 @@ function EachProduct() {
             alt={image}
             src={image}
           />
-          <p className="eachproduct-discription">{description}</p>
+          <Card.Title className="eachproduct-card-title  ">
+            <span className=" fs-4">{title}</span>
+            <h6 className="me-5 text-muted">
+              {"    "} {FormatCurrency(price)}
+            </h6>
+            <p className="eachproduct-discription">{description}</p>
+          </Card.Title>
         </div>
         <Card.Body className="eachproduct-card-body">
-          <Card.Title className="eachproduct-card-title  mb-4">
-            <span className=" fs-3">{title}</span>
-            <span className="me-5 text-muted">
-              {"    "} {FormatCurrency(price)}
-            </span>
-          </Card.Title>
-
           <div>
             {quantity === 0 ? (
               <Button className="" onClick={() => increaseItemQuantity(id)}>
