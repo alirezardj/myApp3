@@ -16,24 +16,15 @@ function Navbar() {
           </Nav>
         </Nav>
         <Button
-          className="rounded-circle  "
+          className="navbar-button rounded-circle  "
           variant="outline-primary"
-          style={{ position: "relative", height: "3rem", width: "3rem" }}
           onClick={openCart}
         >
-          <FaCartShopping />
-          <div
-            className=" rounded-circle bg-danger d-flex justify-content-center align-items-center"
-            style={{
-              color: "white",
-              width: "1.5rem",
-              height: "1.5rem",
-              position: "absolute",
-              bottom: 0,
-              right: 0,
-              transform: "translate(25%,25%)",
-            }}
-          >
+          <p className="shopping-cart-icon">
+            <FaCartShopping />
+          </p>
+
+          <div className="counter-icon rounded-circle bg-danger d-flex justify-content-center align-items-center">
             {cartQuantity}
           </div>
         </Button>

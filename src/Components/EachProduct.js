@@ -27,7 +27,7 @@ function EachProduct() {
   return (
     <div key={id}>
       <Card className="eachproduct-card m-4">
-        <div className="d-flex">
+        <div className="eachproduct-flex-container d-flex">
           <Card.Img
             className="eachproducts-card-image"
             alt={image}
@@ -43,7 +43,7 @@ function EachProduct() {
             </span>
           </Card.Title>
 
-          <div className="">
+          <div>
             {quantity === 0 ? (
               <Button className="" onClick={() => increaseItemQuantity(id)}>
                 + add to cart

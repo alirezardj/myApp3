@@ -35,7 +35,9 @@ function Products() {
                     />
 
                     <Card.Title className="products-card-title d-flex flex-column justify-content-between mt-1  p-2 ">
-                      <snap className="text-start ">{product.title}</snap>
+                      <p className="product-card-title-text text-start ">
+                        {product.title}
+                      </p>
                       <snap className="text-muted align-self-end ">
                         {product.price}$
                       </snap>
@@ -65,7 +67,9 @@ function Products() {
                     />
 
                     <Card.Title className="products-card-title d-flex flex-column justify-content-between mt-3 p-2 ">
-                      <snap className="text-start ">{product.title}</snap>
+                      <p className="product-card-title-text text-start ">
+                        {product.title}
+                      </p>
                       <snap className="text-muted align-self-end ">
                         {product.price}$
                       </snap>

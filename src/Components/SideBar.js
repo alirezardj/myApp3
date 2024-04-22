@@ -13,7 +13,7 @@ function SideBar() {
         <Nav.Item>
           <NavLink
             to="/"
-            className="nav-link"
+            className="sidebar-text nav-link"
             onClick={() => setSelectedCategory(null)}
           >
             All Products
@@ -25,7 +25,7 @@ function SideBar() {
           <Nav.Item key={category}>
             <NavLink
               to={`/category/${category}`}
-              className="nav-link"
+              className="sidebar-text nav-link"
               onClick={() => setSelectedCategory(category)}
             >
               {category}
