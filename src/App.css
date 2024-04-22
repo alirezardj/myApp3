@@ -130,6 +130,7 @@
   .card.products-card {
     width: 210px;
     height: 370px;
+    margin-left: 45px;
   }
   .card-img.products-card-image {
     width: 130px;
@@ -166,9 +167,9 @@
   }
   /*SideBar*/
   .sidebar {
-    width: 75px;
+    width: 85px;
   }
   .nav-link.sidebar-text {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
